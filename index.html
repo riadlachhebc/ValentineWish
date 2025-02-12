@@ -14,10 +14,18 @@
 
   <body>
     <div class="container">
-   <audio autoplay loop controls>
+<audio id="myAudio" loop>
     <source src="congratulations.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
+
+<script>
+  var audio = document.getElementById('myAudio');
+  audio.play().catch(function(error) {
+    // If autoplay is blocked, try handling the error
+    console.log("Autoplay blocked, try unmuting or adding user interaction.");
+  });
+</script>
       <div class="one">
         <h1 class="one">
           Hey
